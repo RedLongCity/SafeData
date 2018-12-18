@@ -25,6 +25,12 @@
         <servlet-name>Message</servlet-name>
         <servlet-class>main.java.com.controllers.servlet.MessageController</servlet-class>
     </servlet>
+    <servlet>
+        <description></description>
+        <display-name>HomeController</display-name>
+        <servlet-name>Home</servlet-name>
+        <servlet-class>main.java.com.controllers.servlet.HomeController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -40,6 +46,10 @@
     <servlet-mapping>
         <servlet-name>Message</servlet-name>
         <url-pattern>/Message</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Home</servlet-name>
+        <url-pattern>/Home</url-pattern>
     </servlet-mapping>
 
 </web-app>

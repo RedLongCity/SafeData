@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    var publicKeyUrl = "http://localhost:8099/rjj/encryption-parameters";
-    var encryptUrl = "http://localhost:8099/rjj/encryption-data";
+    var publicKeyUrl = getCurrentUrl() + 'Encryption';
+    var encryptUrl = getCurrentUrl() + 'Encryption';
     $("#getPublicKey").click(function (e) {
         e.preventDefault();
         $('#publicKey').text("loading...");
@@ -56,3 +56,7 @@ $(document).ready(function () {
         $("#decryptionResult").text(decrypted);
     });
 });
+
+function getCurrentUrl() {
+    return 'http://' + window.location.host + '/SafeData/';
+}
