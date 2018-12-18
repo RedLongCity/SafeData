@@ -11,12 +11,11 @@ import java.io.IOException;
 @WebServlet(name = "Home", urlPatterns = {"/Home"})
 public class HomeController extends HttpServlet {
 
-    private static final String ENCRYPTIONJSP = "/encryption.jsp";
-
+    private static final String LOGIN = "/login.jsp";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher view = request.getRequestDispatcher(ENCRYPTIONJSP);
-        view.forward(request, response);
+        RequestDispatcher view = request.getRequestDispatcher(LOGIN);
+        view.forward(request, response); //forward response to request
     }
 }

@@ -11,26 +11,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Objects;
 
 @WebServlet(name = "Login", urlPatterns = {"/Login"})
 public class LoginController extends HttpServlet {
 
     private static final String REGISTRATION = "/registration.jsp";
-    private static final String WELCOME = "/welcome.jsp";
+    private static final String ENCRYPTIONJSP = "/encryption.jsp";
+    private static final String LOGIN = "/login.jsp";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String redirectPage = "/login.jsp";
-        String action = request.getParameter("action");
-        RequestDispatcher view = request.getRequestDispatcher(redirectPage);
-        view.forward(request, response); //forward response to request
+        RequestDispatcher view = request.getRequestDispatcher(LOGIN);
+        view.forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        PrintWriter pwOut = response.getWriter();
         String un = request.getParameter("username");
         String pw = request.getParameter("psword");
         LoginModel loginModel = new LoginModel(un, pw);
@@ -42,8 +39,8 @@ public class LoginController extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("username", loginModel.getUsername());
             session.setAttribute("password", loginModel.getPsword());
-            view = request.getRequestDispatcher(WELCOME);
+            view = request.getRequestDispatcher(ENCRYPTIONJSP);
         }
-            view.forward(request, response);
+        view.forward(request, response);
     }
 }

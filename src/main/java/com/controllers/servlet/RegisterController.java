@@ -15,7 +15,7 @@ import java.io.IOException;
 @WebServlet(name = "Register", urlPatterns = {"/Register"})
 public class RegisterController extends HttpServlet {
 
-    private static final String WELCOME = "/welcome.jsp";
+    private static final String LOGIN = "/login.jsp";
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -26,7 +26,7 @@ public class RegisterController extends HttpServlet {
         HttpSession session = request.getSession();
         session.setAttribute("username", user.getUsername());
         session.setAttribute("password", user.getPsword());
-        RequestDispatcher view = request.getRequestDispatcher(WELCOME);
+        RequestDispatcher view = request.getRequestDispatcher(LOGIN);
         view.include(request, response);
     }
 }
