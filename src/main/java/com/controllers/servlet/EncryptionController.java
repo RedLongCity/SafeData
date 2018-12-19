@@ -37,6 +37,8 @@ public class EncryptionController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+        String un = request.getParameter("encr_usnm");
+        String pw = request.getParameter("encr_psword");
         StringBuilder sb = new StringBuilder();
         String line;
         try {
