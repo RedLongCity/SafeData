@@ -42,6 +42,7 @@
             <input class="theinput" type="password" id="cfmpsword" placeholder="Enter password" name="cfmpsword" required/>
         </div>
         <br>
+        <button class="btn btn-success" onclick="go()">Register</button>
     </fieldset>
 </div>
 <script>
