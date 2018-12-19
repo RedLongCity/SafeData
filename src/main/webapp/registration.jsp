@@ -27,7 +27,7 @@
         <legend class="legend-bold">Login</legend>
         <div>
             <label>Username:</label>
-            <input class="theinput" type="text" id="username" placeholder="Enter your name" name="username" required/>
+            <input class="theinput" type="text" id="usnm" placeholder="Enter your name" name="usnm" required/>
         </div>
         <div>
             <label>Email:</label>
